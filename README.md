@@ -11,6 +11,7 @@ pip install geopandas altair pandas jupyter
 ~~~
 
 
+
 # Task 1: Loading the data and initial exploration
 Import the necessary libraries and load the data:
 ~~~bash
@@ -30,6 +31,7 @@ gdf.head()
 ~~~
 
 
+
 # Task 2: Performing spatial operations
 Load the Chicago ZIP code boundaries dataset:
 ~~~bash
@@ -45,6 +47,7 @@ Merge the aggregated data back with the Chicago ZIP code boundaries:
 ~~~bash
 merged = chicago.merge(joined, on='zip')
 ~~~
+
 
 
 # Task 3: Creating linked views
@@ -67,6 +70,9 @@ matrix = alt.Chart(gdf).mark_circle().add_params(brush).encode(
 
 matrix
 ~~~
+
+![Visualization](vis-1.png)
+
 
 
 # Task 4: Link the scatter plots with a visualization of the spatial attributes
@@ -107,3 +113,4 @@ bubble_matrix = alt.Chart(gdf).mark_circle().encode(
 (bubble_scatter & bubble_matrix)
 ~~~
 
+![Visualization](vis-2.png)
